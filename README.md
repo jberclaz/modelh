@@ -47,7 +47,7 @@ This work is not the first attempt at a replacement controller for the Model M. 
 - https://github.com/sje-mse/yacobo
 - https://store.level1techs.com/products/mstar-classic-model-m-controller-conversion-kit
 
-## Tutorial
+## Production tutorial
 
 In this tutorial, we will go into all the steps needed to make your Model H controller board.
 
@@ -57,6 +57,11 @@ Here, we show how to produce the PCB with
 choose a different one. Note that the bill of material has been
 optimized for parts available at JLCPCB. Should you choose a different
 provider, you might have to replace some parts.
+
+1. Go to [JLCPCB](jlcpcb.com) and create an account.
+2. On the JLCPCB home page, use the button `Add gerber file` to upload the file `gerber.zip` found in the `production` folder of this repo.
+
+~[](pictures/jlcpcb1.png)
 
 ## Part list
 
