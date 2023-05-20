@@ -179,7 +179,11 @@ sudo dpkg -i stlink_1.7.0-1_adm64.deb
 ```bash
 git clone git@github.com:jberclaz/stm32f103-keyboard-bootloader.git
 ```
-3. Build the bootloader
+3. Install the ARM compiler
+```bash
+sudo apt-get install gcc-arm-none-eabi
+```
+4. Build the bootloader
 ```bash
 cd stm32f103-keyboard-bootloader
 mkdir build && cd build
