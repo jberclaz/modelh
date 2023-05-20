@@ -61,7 +61,7 @@ provider, you might have to replace some parts.
 1. Go to [JLCPCB](jlcpcb.com) and create an account.
 2. On the JLCPCB home page, use the button `Add gerber file` to upload the file `gerber.zip` found in the `production` folder of this repo.
 
-~[](pictures/jlcpcb1.png)
+![](pictures/jlcpcb1.png)
 
 ## Part list
 
