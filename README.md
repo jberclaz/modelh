@@ -253,7 +253,7 @@ make modelh:default
 make modelh:default:flash
 ```
 
-It is possible that this flashing method won't work due to our system configuration. If that's the case, here is an alternate method for flashing the firmware. It needs root access.
+It is possible that this flashing method won't work due to your system configuration. If that's the case, here is an alternate method for flashing the firmware. It needs root access.
 ```bash
 sudo su
 dfu-util -D modelh_default.bin
