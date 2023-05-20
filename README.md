@@ -266,3 +266,33 @@ $ lsusb
 Bus 001 Device 088: ID feed:b155 IBM Model M
 ...
 ```
+
+7. If for any reason you need to flash the firmware again, press the push button on the board to put it back to `DFU` mode.
+
+---
+
+### Re-assembly
+At this point, if everything went well, you can disconnect your Model
+H controller and insert it into your Model M keyboard. Make sure to
+handle the FFC cables very carefully when you disconnect the original
+controller and connect the Model H.
+
+Make sure to insert the 3D printed spacer on top of the connector as shown below. This will hold the connector and the board into place.
+
+![connector spacer](https://modelh.club/modelh_installed.jpg)
+
+After this, you can close the keyboard frame and replace the 4 screws. Your keyboard is now ready to be used!
+
+---
+
+### Upgrading the firmware
+
+One of the nice feature of the QMK firmware is that it allows you to change the keys layout. Please look at the [QMK documentation](https://docs.qmk.fm/#/) to learn how to do that.
+
+If you've created a new key layout and you want to flash your controller firmware once your keyboard is assembled, you don't need to open your keyboard again. The bootloader has a nice feature that allows you to put the controller in DFU mode, without having to access the controler.
+
+1. Disconnect your USB cable.
+
+2. While holding down the `Esc` key, plug in the USB cable again.
+
+3. Your keyboard should now appear as a `DFU` device. It is ready to be flashed again.
