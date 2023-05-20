@@ -65,7 +65,7 @@ provider, you might have to replace some parts.
 
 3. At the bottom of the page, select `PCB Assembly`. Leave the default options, but you may want to change the `PCBA Qty` to 2. Also, select `Yes` for `Confirm Parts Placement`.
 
-![](pictures/jlcpcb1.png)
+![](pictures/jlcpcb2.png)
 
 4. On the right of the page, click on `NEXT`.
 5. You can now visualize both sides of your PCB. Then click on `NEXT` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
