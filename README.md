@@ -287,7 +287,7 @@ After this, you can close the keyboard frame and replace the 4 screws. Your keyb
 
 ### Upgrading the firmware
 
-One of the nice feature of the QMK firmware is that it allows you to change the keys layout. Please look at the [QMK documentation](https://docs.qmk.fm/#/) to learn how to do that.
+One of the nice features of the QMK firmware is that it allows you to change the keys layout. Please look at the [QMK documentation](https://docs.qmk.fm/#/) to learn how to do that.
 
 If you've created a new key layout and you want to flash your controller firmware once your keyboard is assembled, you don't need to open your keyboard again. The bootloader has a nice feature that allows you to put the controller in DFU mode, without having to access the controler.
 
