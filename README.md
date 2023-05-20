@@ -64,11 +64,25 @@ provider, you might have to replace some parts.
 ![](pictures/jlcpcb1.png)
 
 3. At the bottom of the page, select `PCB Assembly`. Leave the default options, but you may want to change the `PCBA Qty` to 2. Also, select `Yes` for `Confirm Parts Placement`.
+
+![](pictures/jlcpcb1.png)
+
 4. On the right of the page, click on `NEXT`.
-5. You can now visualize both sides of your PCB. Then click on `Bill of Materials` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
-6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`.
+5. You can now visualize both sides of your PCB. Then click on `NEXT` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
+6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`. If a part is out of stock, click on the magnifying glass to select a replacement. Alternatively, you can wait until the part is in stock again. All components of the design were chosen among JLCPCB's __basic parts__ and should normally be avaiable.
 
 ![](pictures/jlcpcb3.png)
+
+7. This page should show you the parts placement (as shown below). Select the 3D view and verify that the components are placed properly. Then click `NEXT`.
+
+8. Select Product Description: Office Appliance.../Keyboard...
+
+9. Save to Cart, Check Out.
+
+#### Cost
+At the time of writing (May 2023), the cost of 5 PCBs with 2 assembled was $21 (without shipping).
+
+![](pictures/jlcpcb4.png)
 
 ## Part list
 
