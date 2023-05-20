@@ -59,9 +59,16 @@ optimized for parts available at JLCPCB. Should you choose a different
 provider, you might have to replace some parts.
 
 1. Go to [JLCPCB](jlcpcb.com) and create an account.
-2. On the JLCPCB home page, use the button `Add gerber file` to upload the file `gerber.zip` found in the `production` folder of this repo.
+2. On the JLCPCB home page, use the button `Add gerber file` to upload the file `gerber.zip` found in the `production` folder of this repo. You should see a page like the image below. Leave the default options.
 
 ![](pictures/jlcpcb1.png)
+
+3. At the bottom of the page, select `PCB Assembly`. Leave the default options, but you may want to change the `PCBA Qty` to 2. Also, select `Yes` for `Confirm Parts Placement`.
+4. On the right of the page, click on `NEXT`.
+5. You can now visualize both sides of your PCB. Then click on `Bill of Materials` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
+6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`.
+
+![](pictures/jlcpcb3.png)
 
 ## Part list
 
