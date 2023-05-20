@@ -217,3 +217,52 @@ sudo st-flash write build/bootloader-modelh.bin 0x8000000
 ---
 
 ### QMK Firmware
+
+The final step in this tutorial is programming your controller with
+the QMK firmware. This is the firmware that will monitor the key
+pressed on your keyboard and communicate with the PC. Now that the
+bootloader is installed, flashing the firmware can be simply done
+through the USB port.
+
+1. Clone the QMK firmware
+```bash
+git clone git@github.com:jberclaz/qmk_firmware.git
+cd qmk_firmware
+git checkout modelh
+```
+
+2. Install DFU-Util
+```bash
+sudo apt-get install dfu-util
+```
+
+3. Install the qmk binary
+```bash
+virtualenv -p python3 venv
+pip3 install qmk
+. venv/bin/activate
+```
+
+4. Build the firmware. This step should produce a firmware binary `modelh_default.bin`.
+```bash
+make modelh:default
+```
+
+5. Flash the firmware onto your controller. At that point, your controller should be connected via the USB cable and visible as `DFU` device.
+```bash
+make modelh:default:flash
+```
+
+It is possible that this flashing method won't work due to our system configuration. If that's the case, here is an alternate method for flashing the firmware. It needs root access.
+```bash
+sudo su
+dfu-util -D modelh_default.bin
+```
+
+6. If the firmware flashing operation is successful, you should now see your keyboard listed among your USB devices:
+```
+$ lsusb
+...
+Bus 001 Device 088: ID feed:b155 IBM Model M
+...
+```
