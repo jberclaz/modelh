@@ -175,18 +175,34 @@ below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6V
 ```bash
 sudo dpkg -i stlink_1.7.0-1_adm64.deb
 ```
-2. Clone the [stm32f103-keyboard-bootloader](https://github.com/jberclaz/stm32f103-keyboard-bootloader) locally. This repo contains the bootloader you'll need for your keyboard.
+2. Install the ARM compiler
+```bash
+sudo apt-get install gcc-arm-none-eabi cmake build-essential
+```
+3. Clone the [stm32f103-keyboard-bootloader](https://github.com/jberclaz/stm32f103-keyboard-bootloader) locally. This repo contains the bootloader you'll need for your keyboard.
 ```bash
 git clone git@github.com:jberclaz/stm32f103-keyboard-bootloader.git
-```
-3. Install the ARM compiler
-```bash
-sudo apt-get install gcc-arm-none-eabi
+cd stm32f103-keyboard-bootloader
+git checkout modelh
 ```
 4. Build the bootloader
 ```bash
-cd stm32f103-keyboard-bootloader
 mkdir build && cd build
 cmake ..
 make -j $(nproc)
 ```
+This should produce a file called `bootloader-modelh.bin` in the `build` folder.
+
+Note that if you have trouble building the booloader, it may be
+because your distribution is too new. I created a script that allows
+you to build inside a Ubuntu 20.04 Docker. To do that, just call the
+script
+```bash
+./build_inside_docker.sh
+```
+This should produce the same artifact `bootloader-modelh.bin`.
+
+5. Connect your Model H with the ST-Link device. Connect only the 3 pins `SWDIO`, `SWCLK` and `RESET` to the debug port of the controller, as shown on the picture below. Do not connect the other pins.
+![debug port](pictures/debug_port.jpg)
+
+6. Power on your controller by plugin the USB cable
