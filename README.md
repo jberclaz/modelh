@@ -104,7 +104,16 @@ There are several types of connectors for the LEDs.
 4. Finally, if you LEDs are integrated to the membrane rows connector (see below), you'll need a 16-position and a 12-position FFC connectors.
 ![LED integrated](site/16_12.jpg)
 
+Below is the list of components you will need to order:
 
-* CONN FFC VERT 16POS 2.54MM PCB - https://www.digikey.ca/products/en?keywords=A144434-ND
-* CONN FFC VERT 8POS 2.54MM PCB - https://www.digikey.ca/products/en?keywords=5-520315-8-ND
-* CONN FFC VERT 4POS 2.54MM PCB - https://www.digikey.ca/products/en?keywords=A123169-ND
+| Part                      | Link                                                                                           | Quantity |
+|---------------------------|------------------------------------------------------------------------------------------------|----------|
+| 16-POS FFC TE connector   | https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/6-520315-6/688643    | 1        |
+| 8-POS FFC TE connector    | https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-520315-8/688639    | 0/1      |
+| 4-POS FFC TE connector    | https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-520315-4/2262309   | 0/1      |
+| 12-POS FFC TE connector   | https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/6-520315-2/1137020   | 0/1      |
+| USB-B connector           | https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/292304-1/773785      | 1        |
+| Debug port connector      | https://www.digikey.com/en/products/detail/on-shore-technology-inc/302-S101/2178422            | 1        |
+| 6-POS header connector    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/61300621121/4846835           | 1        |
+| jumper                    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/60900213421/2508447           | 2        |
+| USB A-B cable             | https://www.digikey.com/en/products/detail/tripp-lite/U022-006-BE/7104962                      | 1        |
