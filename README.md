@@ -49,7 +49,12 @@ This work is not the first attempt at a replacement controller for the Model M. 
 
 ## Production tutorial
 
-In this tutorial, we will go into all the steps needed to make your Model H controller board.
+In this tutorial, we will go into all the steps needed to make your
+Model H controller board. Note that I assume you'll be using Linux
+(specifically Ubuntu). You can probably accomplish it under Windows if
+you install the
+[WSL](https://learn.microsoft.com/en-us/windows/wsl/install). However,
+I have not tested it.
 
 ### PCB
 Here, we show how to produce the PCB with
@@ -144,6 +149,8 @@ at the top of this page. Pay attention to the FFC connectors
 direction. Note the white lines on the board indicating the right
 connectors direction.
 
+---
+
 ### Bootloader
 
 At this point, you should have a complete controller. However, do not
@@ -163,3 +170,19 @@ computer, you will need to a ST-Link device, such as the one shown
 below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6VLZ?psc=1&ref=ppx_yo2ov_dt_b_product_details) for ~$10.
 
 ![ST-Link](https://github.com/jberclaz/stm32f103-keyboard-bootloader/blob/master/img/stlink.jpg)
+
+1. Download the latest [stlink](https://github.com/stlink-org/stlink) from [here](https://github.com/stlink-org/stlink/releases/tag/v1.7.0) and install it.
+```bash
+sudo dpkg -i stlink_1.7.0-1_adm64.deb
+```
+2. Clone the [stm32f103-keyboard-bootloader](https://github.com/jberclaz/stm32f103-keyboard-bootloader) locally. This repo contains the bootloader you'll need for your keyboard.
+```bash
+git clone git@github.com:jberclaz/stm32f103-keyboard-bootloader.git
+```
+3. Build the bootloader
+```bash
+cd stm32f103-keyboard-bootloader
+mkdir build && cd build
+cmake ..
+make -j $(nproc)
+```
