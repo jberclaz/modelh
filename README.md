@@ -206,3 +206,14 @@ This should produce the same artifact `bootloader-modelh.bin`.
 ![debug port](pictures/debug_port.jpg)
 
 6. Power on your controller by plugin the USB cable
+
+7. You can now flash your controller:
+```bash
+sudo st-flash write build/bootloader-modelh.bin 0x8000000
+```
+
+8. After the flashing is complete, you should see a `DFU` device when listing the USB devices with `lsusb`. You can now disconnect the ST-Link from your controller.
+
+---
+
+### QMK Firmware
