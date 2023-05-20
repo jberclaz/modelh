@@ -69,11 +69,13 @@ provider, you might have to replace some parts.
 
 4. On the right of the page, click on `NEXT`.
 5. You can now visualize both sides of your PCB. Then click on `NEXT` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
-6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`. If a part is out of stock, click on the magnifying glass to select a replacement. Alternatively, you can wait until the part is in stock again. All components of the design were chosen among JLCPCB's __basic parts__ and should normally be avaiable.
+6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`. If a part is out of stock, click on the magnifying glass to select a replacement. Alternatively, you can wait until the part is in stock again. All components of the design were chosen among JLCPCB's __basic parts__ and should normally be available.
 
 ![](pictures/jlcpcb3.png)
 
 7. This page should show you the parts placement (as shown below). Select the 3D view and verify that the components are placed properly. Then click `NEXT`.
+
+![](pictures/jlcpcb4.png)
 
 8. Select Product Description: Office Appliance.../Keyboard...
 
@@ -82,9 +84,26 @@ provider, you might have to replace some parts.
 #### Cost
 At the time of writing (May 2023), the cost of 5 PCBs with 2 assembled was $21 (without shipping).
 
-![](pictures/jlcpcb4.png)
 
-## Part list
+### Additional Components
+
+While you wait for your PCB to be fabricated, you can order the few
+additional components that you'll need to hand solder onto the
+board. But first, you need to disassemble your keyboard and check what
+kind of wiring you have. Look at this [tutorial](https://blog.nathanv.me/posts/ibm-model-m-cleaning/) for this.
+
+There are several types of connectors for the LEDs.
+
+1. If you don't have LEDs, that's easy. You'll just need a 16-position and a 8-position FFC connectors.
+2. If you have an old keyboard with the type of LED cable shown below, you'll have to figure out the type of connector you'll need for it. In addition, you'll need a 16-position and 8-position FFC connectors.
+![LED wire](https://github.com/mschwingen/hardware/raw/master/modelm-usb/images/LEDs_Wire_s.jpg)
+
+3. If your LEDs are connected with a FFC cable like the one shown below, you'll need a 16-position, 8-position and 4-position FFC connectors.
+![LED FFC](site/16_8_4.jpg)
+
+4. Finally, if you LEDs are integrated to the membrane rows connector (see below), you'll need a 16-position and a 12-position FFC connectors.
+![LED integrated](site/16_12.jpg)
+
 
 * CONN FFC VERT 16POS 2.54MM PCB - https://www.digikey.ca/products/en?keywords=A144434-ND
 * CONN FFC VERT 8POS 2.54MM PCB - https://www.digikey.ca/products/en?keywords=5-520315-8-ND
