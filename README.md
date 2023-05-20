@@ -84,6 +84,14 @@ provider, you might have to replace some parts.
 #### Cost
 At the time of writing (May 2023), the cost of 5 PCBs with 2 assembled was $21 (without shipping).
 
+---
+
+### 3D Printed connector spacer
+To maintain the USB connector and the controller board in place, you will have to 3D print a small connector spacer to be inserted around the USB connector.
+The file to be printed is located at `shim/shim.stl`.
+You can use any 3D printing service for this, however it might be a good idea to use JLCPCB and group the order with the PCB one.
+
+---
 
 ### Additional Components
 
@@ -117,3 +125,41 @@ Below is the list of components you will need to order:
 | 6-POS header connector    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/61300621121/4846835           | 1        |
 | jumper                    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/60900213421/2508447           | 2        |
 | USB A-B cable             | https://www.digikey.com/en/products/detail/tripp-lite/U022-006-BE/7104962                      | 1        |
+
+---
+
+### Soldering
+
+Once you received the controller board and all the components, it's
+time to solder them to the board. If you use the right technique,
+soldering is not that hard. This
+[tutorial](https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering/all)
+goes in a lot of details and the video explains very well how to
+easily solder your through-hole components into the board. If you've
+never soldered before, I would recommend practicing on a different
+board before assembling your Model H.
+
+You can clearly see where to place the components on the board picture
+at the top of this page. Pay attention to the FFC connectors
+direction. Note the white lines on the board indicating the right
+connectors direction.
+
+### Bootloader
+
+At this point, you should have a complete controller. However, do not
+insert it into your keyboard just yet. You still need to program your
+controller and it is much easier to do it when not attached to the
+keyboard.
+
+The STM32F103 micro-controller from the board does not ship with a USB
+bootloader. This means that you cannot use the USB port just yet. If
+you plug the controller to your computer, you should see the
+right-most LED light up, but the computer will not recognize the
+controller.
+
+Since we cannot use the USB port to communicate with the controller,
+we will have to rely on the `debug` port. To connect it to your
+computer, you will need to a ST-Link device, such as the one shown
+below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6VLZ?psc=1&ref=ppx_yo2ov_dt_b_product_details) for ~$10.
+
+![ST-Link](https://github.com/jberclaz/stm32f103-keyboard-bootloader/blob/master/img/stlink.jpg)
