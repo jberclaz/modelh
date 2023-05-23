@@ -152,6 +152,8 @@ at the top of this page. Pay attention to the FFC connectors
 direction. Note the white lines on the board indicating the right
 connectors direction.
 
+Place the two jumpers (`boot0` and `boot1`) in `0` position (as shown on the board picture above).
+
 ---
 
 ### Bootloader
