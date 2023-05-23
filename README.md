@@ -131,6 +131,9 @@ Below is the list of components you will need to order:
 | jumper                    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/60900213421/2508447           | 2        |
 | USB A-B cable             | https://www.digikey.com/en/products/detail/tripp-lite/U022-006-BE/7104962                      | 1        |
 
+#### Cost
+Less than $10.
+
 ---
 
 ### Soldering
@@ -239,8 +242,8 @@ sudo apt-get install dfu-util
 3. Install the qmk binary
 ```bash
 virtualenv -p python3 venv
-pip3 install qmk
 . venv/bin/activate
+pip3 install qmk
 ```
 
 4. Build the firmware. This step should produce a firmware binary `modelh_default.bin`.
