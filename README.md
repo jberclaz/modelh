@@ -274,6 +274,19 @@ Bus 001 Device 088: ID feed:b155 IBM Model M
 
 7. If for any reason you need to flash the firmware again, press the push button on the board to put it back to `DFU` mode.
 
+#### Alternate firmare: QMK-Vial
+
+[QMK-Vial](https://get.vial.today/) is an alternate firmware
+option. It is functionally very similar to QMK, as it was forked from
+this project. The main benefit of QMK-Vial is that it allows to
+reconfigure the key maps via a convenient [web
+UI](https://vial.rocks/) without having to re-flash the firmware.
+
+To use QMK-Vial instead of QMK, follow the QMK steps above, with the following changes:
+- Clone the project with `git clone https://github.com/vial-kb/vial-qmk`. No need to checkout a specific branch.
+- Compile the firmware with `make ibm/modelh:vial`
+- Flash the firmware with `df-util -D ibm_modelh_vial.bin`
+
 ---
 
 ### Re-assembly
