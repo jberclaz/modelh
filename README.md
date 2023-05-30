@@ -22,7 +22,7 @@ If you want to enjoy the great typing experience of an IBM Model M on a modern c
 
 1. You can buy a new unit with a USB interface at [Unicomp](https://www.pckeyboard.com/page/product/NEW_M).
 2. You can use an active [PS/2 to USB converter](https://www.clickykeyboards.com/product/ps-2-to-usb-adapter-converter-for-keyboards/). That solution will not work for RJ-45 Model Ms, though.
-3. You can replace the original controller with a new one supporting USB. That is what this project proposes.
+3. You can replace the original controller with a new one supporting USB. That is what this project is about.
 
 Out of those 3 options, creating your own controller is clearly the
 most involved. That being said, the result is very neat. You'll end up
@@ -32,11 +32,18 @@ keyboard.
 ![USB port](https://modelh.club/modelh_usb_back.jpg)
 
 In addition, the controller firmware uses
-[QMK](https://github.com/qmk/qmk_firmware), which will allow you to
+[QMK](https://github.com/qmk/qmk_firmware), which allows you to
 remap your keys. This is very handy to add media keys and other custom
 combinations you may need.
 
 To make your own board, you don't need any knowledge in electronics, however, you'll have to do a bit of soldering.
+
+This repo contains an open-source PCB design for a replacement
+controller board for the IBM Model M keyboard. It was designed by
+[John Hawthorn](https://github.com/jhawthorn). The controller is a
+drop-in replacement for the original controller, which includes USB
+support and modern QMK-based firmware. It can be installed without any
+modification to the keyboard and can be fully reverted.
 
 ## Related work
 
@@ -49,7 +56,7 @@ This work is not the first attempt at a replacement controller for the Model M. 
 
 ## Production tutorial
 
-In this tutorial, we will go into all the steps needed to make your
+In this tutorial, we will go into all the steps needed to make your own
 Model H controller board. Note that I assume you'll be using Linux
 (specifically Ubuntu). You can probably accomplish it under Windows if
 you install the
