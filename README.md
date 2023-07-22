@@ -292,7 +292,13 @@ UI](https://vial.rocks/) without having to re-flash the firmware.
 To use QMK-Vial instead of QMK, follow the QMK steps above, with the following changes:
 - Clone the project with `git clone https://github.com/vial-kb/vial-qmk`. No need to checkout a specific branch.
 - Compile the firmware with `make ibm/modelh:vial`
-- Flash the firmware with `df-util -D ibm_modelh_vial.bin`
+- Flash the firmware with `dfu-util -D ibm_modelh_vial.bin`
+
+#### Pre-compiled firmware
+
+If you don't want to go through all the above steps of compiling your own firmware from scratch here are versions of QMK and QMK-Vial that I compiled myself.
+- [QMK](firmware/modelh_default.bin)
+- [QMK-Vial](firmware/ibm_modelh_vial.bin)
 
 ---
 
