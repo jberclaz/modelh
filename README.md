@@ -52,7 +52,7 @@ This work is not the first attempt at a replacement controller for the Model M. 
 - https://www.schwingen.org/modelm-usb/
 - https://github.com/ashpil/Model-M-Type-C
 - https://github.com/sje-mse/yacobo
-- https://store.level1techs.com/products/mstar-classic-model-m-controller-conversion-kit
+- https://www.store.level1techs.com/products/p/mstar-classic-model-m-controller-conversion-kit-rkfc5-d7a89
 
 ## Production tutorial
 
@@ -178,7 +178,7 @@ controller.
 
 Since we cannot use the USB port to communicate with the controller,
 we will have to rely on the `debug` port. To connect it to your
-computer, you will need to a ST-Link device, such as the one shown
+computer, you will need to use a ST-Link device, such as the one shown
 below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6VLZ?psc=1&ref=ppx_yo2ov_dt_b_product_details) for ~$10.
 
 ![ST-Link](https://github.com/jberclaz/stm32f103-keyboard-bootloader/blob/master/img/stlink.jpg)
@@ -238,9 +238,8 @@ through the USB port.
 
 1. Clone the QMK firmware
 ```bash
-git clone git@github.com:jberclaz/qmk_firmware.git
+git clone https://github.com/qmk/qmk_firmware.git
 cd qmk_firmware
-git checkout modelh
 ```
 
 2. Install DFU-Util
@@ -255,20 +254,20 @@ virtualenv -p python3 venv
 pip3 install qmk
 ```
 
-4. Build the firmware. This step should produce a firmware binary `modelh_default.bin`.
+4. Build the firmware. This step should produce a firmware binary `ibm_model_m_modelh_default.bin`.
 ```bash
-make modelh:default
+make ibm/model_m/modelh:default
 ```
 
 5. Flash the firmware onto your controller. At that point, your controller should be connected via the USB cable and visible as `DFU` device.
 ```bash
-make modelh:default:flash
+make ibm/model_m/modelh:default:flash
 ```
 
 It is possible that this flashing method won't work due to your system configuration. If that's the case, here is an alternate method for flashing the firmware. It needs root access.
 ```bash
 sudo su
-dfu-util -D modelh_default.bin
+dfu-util -D ibm_model_m_modelh_default.bin
 ```
 
 6. If the firmware flashing operation is successful, you should now see your keyboard listed among your USB devices:
@@ -294,9 +293,10 @@ To use QMK-Vial instead of QMK, follow the QMK steps above, with the following c
 - Compile the firmware with `make ibm/modelh:vial`
 - Flash the firmware with `dfu-util -D ibm_modelh_vial.bin`
 
-#### Pre-compiled firmware
+#### Pre-compiled firmware and bootloader
 
 If you don't want to go through all the above steps of compiling your own firmware from scratch, here are versions of QMK and QMK-Vial that I compiled myself:
+- [Bootloader](firmware/bootloader-modelh.bin)
 - [QMK](firmware/modelh_default.bin)
 - [QMK-Vial](firmware/ibm_modelh_vial.bin)
 
