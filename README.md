@@ -83,7 +83,7 @@ provider, you might have to replace some parts.
 5. You can now visualize both sides of your PCB. Then click on `NEXT` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
 6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`. If a part is out of stock, click on the magnifying glass to select a replacement. Alternatively, you can wait until the part is in stock again. All components of the design were chosen among JLCPCB's __basic parts__ and should normally be available.
 > [!NOTE]
-> It was reported that the STM32F processor has been moved from __Basic Parts__ to __Preferred Extended Parts__. It will still work as expected, but might become a bit more expensive.
+> It was reported that the STM32F micro-controller has been moved from __Basic Parts__ to __Preferred Extended Parts__. It will still work as expected, but might become a bit more expensive.
 
 ![](pictures/jlcpcb3.png)
 
@@ -189,6 +189,9 @@ below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6V
 ```bash
 sudo dpkg -i stlink_1.7.0-1_adm64.deb
 ```
+> [!TIP]
+> If you do not want to go through the following steps for compiling your own bootloader and firmware, you can directly jump to the [section below](https://github.com/jberclaz/modelh?tab=readme-ov-file#pre-compiled-firmware-and-bootloader) to download my pre-compiled versions.
+
 2. Install the ARM compiler
 ```bash
 sudo apt-get install gcc-arm-none-eabi cmake build-essential
