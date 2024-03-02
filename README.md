@@ -190,7 +190,7 @@ below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6V
 sudo dpkg -i stlink_1.7.0-1_adm64.deb
 ```
 > [!TIP]
-> If you do not want to go through the following steps for compiling your own bootloader and firmware, you can directly jump to the [section below](https://github.com/jberclaz/modelh?tab=readme-ov-file#pre-compiled-firmware-and-bootloader) to download my pre-compiled versions.
+> If you do not want to go through the following steps for compiling your own bootloader and firmware, you can directly jump to the [section below](#pre-compiled-firmware-and-bootloader) to download my pre-compiled versions.
 
 2. Install the ARM compiler
 ```bash
