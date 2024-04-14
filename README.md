@@ -218,7 +218,7 @@ This should produce a file called `bootloader-modelh.bin` in the `build` folder.
 > ```bash
 > ./build_inside_docker.sh
 > ```
-This should produce the same artifact `bootloader-modelh.bin`.
+> This should produce the same artifact `bootloader-modelh.bin`.
 
 5. Connect your Model H with the ST-Link device. Connect only the 3 pins `SWDIO`, `SWCLK` and `RESET` to the debug port of the controller, as shown on the picture below. Do not connect the other pins.
 ![debug port](pictures/debug_port.jpg)
