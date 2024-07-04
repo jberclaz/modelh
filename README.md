@@ -303,8 +303,7 @@ To use QMK-Vial instead of QMK, follow the QMK steps above, with the following c
 
 If you don't want to go through all the above steps of compiling your own firmware from scratch, here are versions of QMK and QMK-Vial that I compiled myself:
 - [Bootloader](firmware/bootloader-modelh.bin)
-- [QMK](firmware/modelh_default.bin)
-- [QMK-Vial](firmware/ibm_modelh_vial.bin)
+- [QMK and QMK-Vial firmware](https://github.com/jberclaz/modelh/releases)
 
 ---
 
