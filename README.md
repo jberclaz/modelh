@@ -65,12 +65,12 @@ I have not tested it.
 
 ### PCB
 Here, we show how to produce the PCB with
-[JLCPCB](jlcpcb.com). There are many similar providers. Feel free to
+[JLCPCB](https://jlcpcb.com). There are many similar providers. Feel free to
 choose a different one. Note that the bill of material has been
 optimized for parts available at JLCPCB. Should you choose a different
 provider, you might have to replace some parts.
 
-1. Go to [JLCPCB](jlcpcb.com) and create an account.
+1. Go to [JLCPCB](https://jlcpcb.com) and create an account.
 2. On the JLCPCB home page, use the button `Add gerber file` to upload the file `gerber.zip` found in the `production` folder of this repo. You should see a page like the image below. Leave the default options.
 
 ![](pictures/jlcpcb1.png)
