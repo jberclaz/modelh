@@ -117,7 +117,7 @@ kind of wiring you have. Look at this [tutorial](https://blog.nathanv.me/posts/i
 There are several types of connectors for the LEDs.
 
 1. If you don't have LEDs, that's easy. You'll just need a 16-position and a 8-position FFC connectors.
-2. If you have an old keyboard with the type of LED cable shown below, you'll have to figure out the type of connector you'll need for it. In addition, you'll need a 16-position and 8-position FFC connectors.
+2. If you have an old keyboard with the type of LED cable shown below, you'll need S4B-EH connector (thanks @Whiterat). In addition, you'll need a 16-position and 8-position FFC connectors.
 ![LED wire](https://github.com/mschwingen/hardware/raw/master/modelm-usb/images/LEDs_Wire_s.jpg)
 
 3. If your LEDs are connected with a FFC cable like the one shown below, you'll need a 16-position, 8-position and 4-position FFC connectors.
@@ -139,6 +139,7 @@ Below is the list of components you will need to order:
 | 6-POS header connector    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/61300621121/4846835           | 1        |
 | jumper                    | https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/60900213421/2508447           | 2        |
 | USB A-B cable             | https://www.digikey.com/en/products/detail/tripp-lite/U022-006-BE/7104962                      | 1        |
+| S4B-EH connector          | https://www.digikey.com/en/products/detail/jst-sales-america-inc/S4B-EH/926535                 | 0/1      |
 
 #### Cost
 Less than $10.
