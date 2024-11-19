@@ -53,6 +53,8 @@ This work is not the first attempt at a replacement controller for the Model M. 
 - https://github.com/ashpil/Model-M-Type-C
 - https://github.com/sje-mse/yacobo
 - https://www.store.level1techs.com/products/p/mstar-classic-model-m-controller-conversion-kit-rkfc5-d7a89
+- https://github.com/nuess0r/ctrl-M
+- https://github.com/NilsFC/Model-X
 
 ## Production tutorial
 
