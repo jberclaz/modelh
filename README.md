@@ -204,7 +204,8 @@ for ~$10.
 sudo dpkg -i stlink_1.7.0-1_adm64.deb
 ```
 
-> [!TIP] If you do not want to go through the following steps for
+> [!TIP]
+> If you do not want to go through the following steps for
 > compiling your own bootloader and firmware, you can directly jump to
 > the [section below](#pre-compiled-firmware-and-bootloader) to
 > download my pre-compiled versions.
