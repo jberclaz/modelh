@@ -239,8 +239,8 @@ This should produce a file called `bootloader-modelh.bin` in the `build` folder.
 
 5. Connect your Model H with the ST-Link device. Connect _only_ the
 `SWDIO`, `SWCLK` and `RESET` pins from the ST-Link to the
-corresponding pins on the controller's debug port, as shown below. *Do
-not connect the other pins.*
+corresponding pins on the controller's debug port, as shown below. __Do
+not connect the other pins.__
 
 ![debug port](pictures/debug_port.jpg)
 
