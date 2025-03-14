@@ -12,7 +12,7 @@ durability, there are still many working keyboards today.
 
 ![IBM Enhanced Keyboard](https://upload.wikimedia.org/wikipedia/commons/4/48/IBM_Model_M.png)
 
-However, those keyboards were designed for the [PS/2
+However, those keyboards were originally designed for the [PS/2
 port](https://en.wikipedia.org/wiki/PS/2_port), which is rarely seen
 in recent computers. Some units that were shipped with terminals even
 used a RJ-45 interface. As a result, it can be difficult to use this
@@ -24,8 +24,8 @@ If you want to enjoy the great typing experience of an IBM Model M on a modern c
 2. You can use an active [PS/2 to USB converter](https://www.clickykeyboards.com/product/ps-2-to-usb-adapter-converter-for-keyboards/). That solution will not work for RJ-45 Model Ms, though.
 3. You can replace the original controller with a new one supporting USB. That is what this project is about.
 
-Out of those 3 options, creating your own controller is clearly the
-most involved. That being said, the result is very neat. You'll end up
+Of these three options, building your own controller is the
+most complex, but offers the greatest customization. You'll end up
 with a native USB connector that is very well integrated with the
 keyboard.
 
@@ -36,9 +36,9 @@ In addition, the controller firmware uses
 remap your keys. This is very handy to add media keys and other custom
 combinations you may need.
 
-To make your own board, you don't need any knowledge in electronics, however, you'll have to do a bit of soldering.
+To make your own board, you don't need any knowledge in electronics, however it requires some soldering.
 
-This repo contains an open-source PCB design for a replacement
+This repository contains the open-source PCB design for a replacement
 controller board for the IBM Model M keyboard. It was designed by
 [John Hawthorn](https://github.com/jhawthorn). The controller is a
 drop-in replacement for the original controller, which includes USB
@@ -56,7 +56,7 @@ This work is not the first attempt at a replacement controller for the Model M. 
 - https://github.com/nuess0r/ctrl-M
 - https://github.com/NilsFC/Model-X
 
-## Production tutorial
+## Building the Controller Board
 
 In this tutorial, we will go into all the steps needed to make your own
 Model H controller board. Note that I assume you'll be using Linux
@@ -83,7 +83,14 @@ provider, you might have to replace some parts.
 
 4. On the right of the page, click on `NEXT`.
 5. You can now visualize both sides of your PCB. Then click on `NEXT` and upload the two files `bom.csv` and `positions.csv` from the `production` folder.
-6. Click on `Process BOM & CPL`. At this point, you should see a list of all the components for your design. If all of them are available, click `NEXT`. If a part is out of stock, click on the magnifying glass to select a replacement. Alternatively, you can wait until the part is in stock again. All components of the design were chosen among JLCPCB's __basic parts__ and should normally be available.
+
+6. Click on `Process BOM & CPL`. At this point, you should see a list
+of all the components for your design. If all of them are available,
+click `NEXT`.  All components were selected from JLCPCB's __basic parts__
+to ensure availability. However, if a part is temporarily out of
+stock, you can select a replacement using the magnifying glass icon or
+wait for restocking.
+
 > [!NOTE]
 > It was reported that the STM32F micro-controller has been moved from __Basic Parts__ to __Preferred Extended Parts__. It will still work as expected, but might become a bit more expensive.
 
@@ -105,7 +112,7 @@ At the time of writing (May 2023), the cost of 5 PCBs with 2 assembled was $21 (
 ### 3D Printed connector spacer
 To maintain the USB connector and the controller board in place, you will have to 3D print a small connector spacer to be inserted around the USB connector.
 The file to be printed is located at `shim/shim.stl`.
-You can use any 3D printing service for this, however it might be a good idea to use JLCPCB and group the order with the PCB one.
+You can use any 3D printing service for this, however you may wish to order from JLCPCB to combine shipping with your PCB order.
 
 ---
 
@@ -113,12 +120,15 @@ You can use any 3D printing service for this, however it might be a good idea to
 
 While you wait for your PCB to be fabricated, you can order the few
 additional components that you'll need to hand solder onto the
-board. But first, you need to disassemble your keyboard and check what
-kind of wiring you have. Look at this [tutorial](https://blog.nathanv.me/posts/ibm-model-m-cleaning/) for this.
+board. Before ordering additional components, disassemble your
+keyboard to determine the specific connector type used for the
+LEDs. Refer to this
+[tutorial](https://blog.nathanv.me/posts/ibm-model-m-cleaning/) for
+disassembly instructions.
 
 There are several types of connectors for the LEDs.
 
-1. If you don't have LEDs, that's easy. You'll just need a 16-position and a 8-position FFC connectors.
+1. If your keyboard does not have LEDs, you will only need a 16-position and a 8-position FFC connectors.
 2. If you have an old keyboard with the type of LED cable shown below, you'll need a S4B-EH connector (thanks @Wh1terat). In addition, you'll need a 16-position and 8-position FFC connectors.
 ![LED wire](https://github.com/mschwingen/hardware/raw/master/modelm-usb/images/LEDs_Wire_s.jpg)
 
@@ -151,8 +161,7 @@ Less than $10.
 ### Soldering
 
 Once you received the controller board and all the components, it's
-time to solder them to the board. If you use the right technique,
-soldering is not that hard. This
+time to solder them to the board. With the proper technique, soldering is achievable even for beginners. This
 [tutorial](https://learn.sparkfun.com/tutorials/how-to-solder-through-hole-soldering/all)
 goes in a lot of details and the video explains very well how to
 easily solder your through-hole components into the board. If you've
@@ -176,15 +185,17 @@ controller and it is much easier to do it when not attached to the
 keyboard.
 
 The STM32F103 micro-controller from the board does not ship with a USB
-bootloader. This means that you cannot use the USB port just yet. If
+bootloader. This means the USB port is not yet functional for programming. If
 you plug the controller to your computer, you should see the
-right-most LED light up, but the computer will not recognize the
+right-most LED light up, but the computer will _not_ recognize the
 controller.
 
-Since we cannot use the USB port to communicate with the controller,
-we will have to rely on the `debug` port. To connect it to your
-computer, you will need to use a ST-Link device, such as the one shown
-below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6VLZ?psc=1&ref=ppx_yo2ov_dt_b_product_details) for ~$10.
+Initial programming requires using the `debug` port, as the USB port
+is not yet configured.  To connect it to your computer, you will need
+to use a ST-Link device, such as the one shown below. Those devices
+can be found on
+[Amazon](https://www.amazon.com/dp/B07SQV6VLZ?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+for ~$10.
 
 ![ST-Link](https://github.com/jberclaz/stm32f103-keyboard-bootloader/blob/master/img/stlink.jpg)
 
@@ -192,8 +203,11 @@ below. Those devices can be found on [Amazon](https://www.amazon.com/dp/B07SQV6V
 ```bash
 sudo dpkg -i stlink_1.7.0-1_adm64.deb
 ```
-> [!TIP]
-> If you do not want to go through the following steps for compiling your own bootloader and firmware, you can directly jump to the [section below](#pre-compiled-firmware-and-bootloader) to download my pre-compiled versions.
+
+> [!TIP] If you do not want to go through the following steps for
+> compiling your own bootloader and firmware, you can directly jump to
+> the [section below](#pre-compiled-firmware-and-bootloader) to
+> download my pre-compiled versions.
 
 2. Install the ARM compiler
 ```bash
@@ -223,7 +237,11 @@ This should produce a file called `bootloader-modelh.bin` in the `build` folder.
 > ```
 > This should produce the same artifact `bootloader-modelh.bin`.
 
-5. Connect your Model H with the ST-Link device. Connect only the 3 pins `SWDIO`, `SWCLK` and `RESET` to the debug port of the controller, as shown on the picture below. Do not connect the other pins.
+5. Connect your Model H with the ST-Link device. Connect _only_ the
+`SWDIO`, `SWCLK` and `RESET` pins from the ST-Link to the
+corresponding pins on the controller's debug port, as shown below. __Do
+not connect the other pins.__
+
 ![debug port](pictures/debug_port.jpg)
 
 6. Power on your controller by plugin the USB cable
@@ -233,7 +251,9 @@ This should produce a file called `bootloader-modelh.bin` in the `build` folder.
 sudo st-flash write build/bootloader-modelh.bin 0x8000000
 ```
 
-8. After the flashing is complete, you should see a `DFU` device when listing the USB devices with `lsusb`. You can now disconnect the ST-Link from your controller.
+8. After the flashing is complete, you should see a `DFU` device when
+listing the USB devices with `lsusb`. You can now disconnect the
+ST-Link from your controller.
 
 ---
 
@@ -273,13 +293,16 @@ make ibm/model_m/modelh:default
 make ibm/model_m/modelh:default:flash
 ```
 
-It is possible that this flashing method won't work due to your system configuration. If that's the case, here is an alternate method for flashing the firmware. It needs root access.
+Due to system configuration differences, the standard flashing method
+may not work.  If you encounter issues, use the following alternative
+method, which requires root access:
+
 ```bash
 sudo su
 dfu-util -D ibm_model_m_modelh_default.bin
 ```
 
-6. If the firmware flashing operation is successful, you should now see your keyboard listed among your USB devices:
+6. Upon successful firmware flashing, you should see your keyboard listed among your USB devices:
 ```
 $ lsusb
 ...
@@ -287,7 +310,7 @@ Bus 001 Device 088: ID feed:b155 IBM Model M
 ...
 ```
 
-7. If for any reason you need to flash the firmware again, press the push button on the board to put it back to `DFU` mode.
+7. To re-flash the firmware, press the onboard push button to enter `DFU` mode.
 
 #### Alternate firmare: QMK-Vial
 
@@ -326,7 +349,7 @@ After this, you can close the keyboard frame and replace the 4 screws. Your keyb
 
 ### Upgrading the firmware
 
-One of the nice features of the QMK firmware is that it allows you to change the keys layout. Please look at the [QMK documentation](https://docs.qmk.fm/#/) to learn how to do that.
+A key advantage of the QMK firmware is that it allows you to change the keys layout. Please look at the [QMK documentation](https://docs.qmk.fm/#/) to learn how to do that.
 
 If you've created a new key layout and you want to flash your controller firmware once your keyboard is assembled, you don't need to open your keyboard again. The bootloader has a nice feature that allows you to put the controller in DFU mode, without having to access the controler.
 
