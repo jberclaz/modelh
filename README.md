@@ -29,7 +29,8 @@ most complex, but offers the greatest customization. You'll end up
 with a native USB connector that is very well integrated with the
 keyboard.
 
-![USB port](https://modelh.club/modelh_usb_back.jpg)
+![USB port](pictures/usb_port.jpg)
+![USB cable](pictures/usb_cable.jpg)
 
 In addition, the controller firmware uses
 [QMK](https://github.com/qmk/qmk_firmware), which allows you to
@@ -345,6 +346,8 @@ Make sure to insert the 3D printed spacer on top of the connector as shown below
 ![connector spacer](https://modelh.club/modelh_installed.jpg)
 
 After this, you can close the keyboard frame and replace the 4 screws. Your keyboard is now ready to be used!
+
+![final keyboard](pictures/final.jpg)
 
 ---
 
