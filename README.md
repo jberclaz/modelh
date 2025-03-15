@@ -176,6 +176,9 @@ connectors direction.
 
 Place the two jumpers (`boot0` and `boot1`) in `0` position (as shown on the board picture above).
 
+![Controller after soldering](pictures/front.jpg)
+![Back of the controller](pictures/back.jpg)
+
 ---
 
 ### Bootloader
