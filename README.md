@@ -1,7 +1,7 @@
 # Model H
 ## Replacement controller board for IBM Model M Keyboard
 
-![Model H controller](https://modelh.club/modelh_assembled.jpg)
+![Model H controller](site/modelh_assembled.jpg)
 
 The [IBM Enhanced Keyboard (Model
 M)](https://en.wikipedia.org/wiki/Model_M_keyboard) is widely
@@ -346,7 +346,7 @@ controller and connect the Model H.
 
 Make sure to insert the 3D printed spacer on top of the connector as shown below. This will hold the connector and the board into place.
 
-![connector spacer](https://modelh.club/modelh_installed.jpg)
+![connector spacer](site/modelh_installed.jpg)
 
 After this, you can close the keyboard frame and replace the 4 screws. Your keyboard is now ready to be used!
 
