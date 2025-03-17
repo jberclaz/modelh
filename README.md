@@ -7,7 +7,7 @@ The [IBM Enhanced Keyboard (Model
 M)](https://en.wikipedia.org/wiki/Model_M_keyboard) is widely
 considered the best keyboard for its typing experience. First produced
 in 1985, it was made of high quality materials and is very
-durable. IBM produced over 10 millions units, and because of their
+durable. IBM produced over 10 million units, and because of their
 durability, there are still many working keyboards today.
 
 ![IBM Enhanced Keyboard](https://upload.wikimedia.org/wikipedia/commons/4/48/IBM_Model_M.png)
@@ -37,7 +37,9 @@ In addition, the controller firmware uses
 remap your keys. This is very handy to add media keys and other custom
 combinations you may need.
 
-To make your own board, you don't need any knowledge in electronics, however it requires some soldering.
+This project requires no prior electronics design knowledge, but basic
+soldering skills and familiarity with command-line tools are
+helpful. Beginners can follow along with the provided tutorials.
 
 This repository contains the open-source PCB design for a replacement
 controller board for the IBM Model M keyboard. It was designed by
