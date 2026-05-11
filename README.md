@@ -52,12 +52,17 @@ modification to the keyboard and can be fully reverted.
 
 This work is not the first attempt at a replacement controller for the Model M. Here are a few related projects:
 
-- https://www.schwingen.org/modelm-usb/
-- https://github.com/ashpil/Model-M-Type-C
-- https://github.com/sje-mse/yacobo
-- https://www.store.level1techs.com/products/p/mstar-classic-model-m-controller-conversion-kit-rkfc5-d7a89
-- https://github.com/nuess0r/ctrl-M
-- https://github.com/NilsFC/Model-X
+- [Michael Schwingen's controller](https://www.schwingen.org/modelm-usb/) - One of the earliest open-source designs, featuring an ATmega32u4 with port expanders, bootloader button integrated into the USB housing, and optional RGB LED replacements.
+
+- [Model-M-Type-C](https://github.com/ashpil/Model-M-Type-C) - Emphasizes native USB-C and hotswappable design with QMK compatibility; the USB connector is placed externally using a 3D-printed dock to fit inside the case.
+
+- [Yacobo](https://github.com/sje-mse/yacobo) - Built around the inexpensive Blue Pill (STM32F103C8T6) development board as the microcontroller, requiring users to source and solder the board themselves.
+
+- [Model-H-Rmx](https://github.com/NilsFC/Model-H-Rmx) - A fork of the original Model H with a notched PCB shape for broader case compatibility, on-board solenoid support, and grouped testpoints for easier debugging.
+
+- [ctrl-M](https://github.com/nuess0r/ctrl-M) - Based on the STM32F072, supporting four different LED connector variants and designed to fit even the smaller later-model PCB variant.
+
+- [Model-X](https://github.com/NilsFC/Model-X) - A wireless controller adding Bluetooth Low Energy alongside USB Type-C; built on the nRF52840 with ZMK firmware and a 2000mAh battery lasting over a month.
 
 ## Building the Controller Board
 
