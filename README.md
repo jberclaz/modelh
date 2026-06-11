@@ -1,4 +1,4 @@
-# Model H
+# Model H - Build Tutorial
 ## Replacement controller board for IBM Model M Keyboard
 
 ![Model H controller](site/modelh_assembled.jpg)
